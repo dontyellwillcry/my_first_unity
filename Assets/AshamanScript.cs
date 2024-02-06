@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -31,6 +32,11 @@ public class AshamanScript : MonoBehaviour
         {
             myRigidbody.velocity = Vector2.right * speed;
         }
+        // if (Input.GetKeyUp(KeyCode.D) == true)
+        // {
+        //     myTransform.rotation = Quaternion.Euler(0, 0, 10);
+
+        // }
         if (Input.GetKey(KeyCode.S) == true)
         {
             myRigidbody.velocity = Vector2.down * speed;
@@ -39,13 +45,22 @@ public class AshamanScript : MonoBehaviour
         {
             myRigidbody.velocity = Vector2.left * speed;
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+
+
+        //Diagonal Directions
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.D))
         {
             // This code is the same as the commented code under it.
             Vector2 diagonalDirection = new Vector2(1, 1).normalized;
             myRigidbody.velocity = diagonalDirection * speed;
             // myRigidbody.velocity = new Vector2(1, 1) * speed;
         }
+        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.A))
+        {
+            Vector2 diagonalDirection = new Vector2(-1, 1).normalized;
+            myRigidbody.velocity = diagonalDirection * speed;
+        }
+
         if (Input.GetKeyDown(KeyCode.G) == true)
         {
             myTransform.rotation = Quaternion.Euler(0, 0, 0);
