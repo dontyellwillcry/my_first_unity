@@ -9,6 +9,7 @@ public class AshamanScript : MonoBehaviour
     // public Rigidbody2D myRigidbody: Creates a reference to our RigidBody2D in unity. Our script now has a place to drag and drop our component
     public Rigidbody2D myRigidbody;
     public Transform myTransform;
+    public SpriteRenderer mySpriteRenderer;
 
     // I could say "speed == int;" but if i just delare a public float variable then inside of Unity there will be a new field
     // inside the script component where I can manually adjust the number.
@@ -31,19 +32,18 @@ public class AshamanScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
             myRigidbody.velocity = Vector2.right * speed;
-        }
-        // if (Input.GetKeyUp(KeyCode.D) == true)
-        // {
-        //     myTransform.rotation = Quaternion.Euler(0, 0, 10);
+            mySpriteRenderer.flipX= false;
 
-        // }
-        if (Input.GetKey(KeyCode.S) == true)
-        {
-            myRigidbody.velocity = Vector2.down * speed;
         }
+        // if (Input.GetKey(KeyCode.S) == true)
+        // {
+        //     myRigidbody.velocity = Vector2.down * speed;
+        // }
         if (Input.GetKeyDown(KeyCode.A) == true)
         {
             myRigidbody.velocity = Vector2.left * speed;
+            mySpriteRenderer.flipX = true;
+
         }
 
 
