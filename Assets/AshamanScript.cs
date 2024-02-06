@@ -32,7 +32,7 @@ public class AshamanScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
             myRigidbody.velocity = Vector2.right * speed;
-            mySpriteRenderer.flipX= false;
+            mySpriteRenderer.flipX = false;
 
         }
         // if (Input.GetKey(KeyCode.S) == true)
