@@ -25,9 +25,9 @@ public class AshamanScript : MonoBehaviour
     {
         // GetKeyDown: It returns true only on the frame where the key is first pressed down.  Is used for detecting the initial press of a key
         // GetKey: It returns true as long as the specified key is being held down.  Is used for detecting if a key is being held down continuously
-        if (Input.GetKey(KeyCode.Space) == true)
+        if (Input.GetKeyDown(KeyCode.Space) == true)
         {
-            myRigidbody.velocity = Vector2.up * 3;
+            myRigidbody.velocity = Vector2.up * 4;
         }
         if (Input.GetKeyDown(KeyCode.D) == true)
         {
