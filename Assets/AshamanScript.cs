@@ -11,10 +11,12 @@ public class AshamanScript : MonoBehaviour
     public Transform myTransform;
     public SpriteRenderer mySpriteRenderer;
 
+
     // I could say "speed == int;" but if i just delare a public float variable then inside of Unity there will be a new field
     // inside the script component where I can manually adjust the number.
     public float speed;
     // Start is called before the first frame update
+
     void Start()
     {
 
@@ -64,6 +66,11 @@ public class AshamanScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G) == true)
         {
             myTransform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        // Increases gravity byu 1 each time U is pressed
+        if (Input.GetKeyDown(KeyCode.U) == true)
+        {
+            myRigidbody.gravityScale += 1;
         }
     }
 }
